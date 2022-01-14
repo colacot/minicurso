@@ -19,5 +19,8 @@ main {
     height: 100vh;
     justify-content: center;
     position:relative;
-
+}
+main > section img {
+    height: 400px;
+    margin: 15px 0;
 }
