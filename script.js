@@ -51,6 +51,7 @@ pegarPersonagem2 = () => {
         
     });
 }
+
 pegarPersonagem3 = () => {
     let numeroAleatorio = gerarValorAleatorio();
     return fetch(`https://rickandmortyapi.com/api/character/${numeroAleatorio}`, {
@@ -64,12 +65,15 @@ pegarPersonagem3 = () => {
         imagem3.alt = data.name;
         nomeDoPersonagem3.innerHTML = data.name;
         especie3.innerHTML = data.species;
-        condicao3.innerHTML = traduzirCondicao(data);
-        
+        condicao3.innerHTML = traduzirCondicao(data);   
     });
 }
+botao.onclick = Randomizar;
 
-botao.onclick = pegarPersonagem; pegarPersonagem2; pegarPersonagem3;
+function Randomizar() {
+    pegarPersonagem()
+    pegarPersonagem2()
+    pegarPersonagem3()}
 
 traduzirCondicao = (data) => {
     if(data.status == 'unknown'){
