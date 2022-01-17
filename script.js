@@ -22,15 +22,13 @@ pegarPersonagem = () => {
         method:'GET',
         headers: {
             Accept: 'application/json',
-            "Content-type": 'application/json'
-        }
+            "Content-type": 'application/json'}
     }).then((response) => response.json()).then((data) => {
         imagem.src = data.image;
         imagem.alt = data.name;
         nomeDoPersonagem.innerHTML = data.name;
         especie.innerHTML = data.species;
-        condicao.innerHTML = traduzirCondicao(data);
-        
+        condicao.innerHTML = traduzirCondicao(data); 
     });
 }
 
@@ -48,7 +46,6 @@ pegarPersonagem2 = () => {
         nomeDoPersonagem2.innerHTML = data.name;
         especie2.innerHTML = data.species;
         condicao2.innerHTML = traduzirCondicao(data);
-        
     });
 }
 
@@ -64,8 +61,8 @@ pegarPersonagem3 = () => {
         imagem3.src = data.image;
         imagem3.alt = data.name;
         nomeDoPersonagem3.innerHTML = data.name;
-        especie3.innerHTML = data.species;
-        condicao3.innerHTML = traduzirCondicao(data);   
+        especie3.innerHTML = traduzirCondicao2(data);
+        condicao3.innerHTML = traduzirCondicao1(data);   
     });
 }
 botao.onclick = Randomizar;
@@ -75,12 +72,31 @@ function Randomizar() {
     pegarPersonagem2()
     pegarPersonagem3()}
 
-traduzirCondicao = (data) => {
+traduzirCondicao1 = (data) => {
     if(data.status == 'unknown'){
         return 'Desconhecido';
     }else if(data.status == 'Alive'){
         return 'Sim';
-    }else {
+    }else if(data.status == 'Dead'){
         return 'Não. Está morto';
     }
 }
+
+traduzirCondicao2 = (data) => {
+        if(data.species == 'unknown'){
+    }else if(data.species == 'Human'){
+    return 'Humano';
+    }else if(data.species == 'Humanoid'){
+    return 'Humanoide';
+    }else if(data.species == 'Alien'){
+    return 'Alienígena';
+    }else if(data.species == 'Mythological Creature'){
+    return 'Criatura mitológica';
+    }else if(data.species == 'unknown'){
+    return 'Desconhecida';
+    }else if(data.species == 'Mythological Creature'){
+    return 'Criatura mitológica';}
+}
+
+
+
