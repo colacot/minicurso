@@ -61,8 +61,8 @@ pegarPersonagem3 = () => {
         imagem3.src = data.image;
         imagem3.alt = data.name;
         nomeDoPersonagem3.innerHTML = data.name;
-        especie3.innerHTML = traduzirCondicao2(data);
-        condicao3.innerHTML = traduzirCondicao1(data);   
+        especie3.innerHTML = data.species;
+        condicao3.innerHTML = traduzirCondicao(data);   
     });
 }
 botao.onclick = Randomizar;
@@ -72,30 +72,14 @@ function Randomizar() {
     pegarPersonagem2()
     pegarPersonagem3()}
 
-traduzirCondicao1 = (data) => {
+traduzirCondicao = (data) => {
     if(data.status == 'unknown'){
         return 'Desconhecido';
     }else if(data.status == 'Alive'){
         return 'Sim';
-    }else if(data.status == 'Dead'){
+    }else {
         return 'Não. Está morto';
     }
-}
-
-traduzirCondicao2 = (data) => {
-        if(data.species == 'unknown'){
-    }else if(data.species == 'Human'){
-    return 'Humano';
-    }else if(data.species == 'Humanoid'){
-    return 'Humanoide';
-    }else if(data.species == 'Alien'){
-    return 'Alienígena';
-    }else if(data.species == 'Mythological Creature'){
-    return 'Criatura mitológica';
-    }else if(data.species == 'unknown'){
-    return 'Desconhecida';
-    }else if(data.species == 'Mythological Creature'){
-    return 'Criatura mitológica';}
 }
 
 
