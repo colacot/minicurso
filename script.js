@@ -65,12 +65,14 @@ pegarPersonagem3 = () => {
         condicao3.innerHTML = traduzirCondicao(data);   
     });
 }
+
 botao.onclick = Randomizar;
 
 function Randomizar() {
     pegarPersonagem()
     pegarPersonagem2()
-    pegarPersonagem3()}
+    pegarPersonagem3()
+}
 
 traduzirCondicao = (data) => {
     if(data.status == 'unknown'){
