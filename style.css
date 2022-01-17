@@ -6,12 +6,14 @@ body {
 }
 
 main {
-    align-items: center;
+    align-items: top;
     display: flex;
     height: 100vh;
     justify-content: center;
+    padding: 10px;
     position:relative;
 }
+
 main > section button {
     background-color: #00b3b3;
     border: none; 
@@ -27,7 +29,7 @@ main > section button {
 }
 
 main > section img {
-    height: 350px;
+    height: 385px;
     margin: 25px ;
 }
 
@@ -42,10 +44,11 @@ main > section img {
     color:#008B8B;
     display: flex;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.5px;
 }
 
 #detalhes-container > li p {
     color: black;
     font-weight: normal;
+    letter-spacing: 0px;
 }
